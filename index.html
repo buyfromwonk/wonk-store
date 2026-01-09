@@ -1,266 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WONK – Buy From Wonk</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Inter',sans-serif;
-}
-
-body{
-  background:#0d0d0d;
-  color:#ffffff;
-  overflow-x:hidden;
-}
-
-a{color:#fff;text-decoration:none}
-
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 50px;
-  position:sticky;
-  top:0;
-  background:#0d0d0d;
-  z-index:100;
-}
-
-.logo{
-  font-size:26px;
-  font-weight:700;
-  letter-spacing:2px;
-}
-
-nav a{
-  margin-left:25px;
-  position:relative;
-  font-size:14px;
-}
-
-nav a::after{
-  content:'';
-  position:absolute;
-  left:0;
-  bottom:-5px;
-  width:0;
-  height:2px;
-  background:#c9a24d;
-  transition:0.3s;
-}
-
-nav a:hover::after{
-  width:100%;
-}
-
-/* HERO */
-.hero{
-  height:90vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
-}
-
-.hero h1{
-  font-size:52px;
-  animation:fadeUp 1.2s ease;
-}
-
-.hero p{
-  margin-top:15px;
-  color:#bdbdbd;
-  animation:fadeUp 1.6s ease;
-}
-
-.hero button{
-  margin-top:30px;
-  padding:14px 36px;
-  border:none;
-  background:#c9a24d;
-  color:#000;
-  font-weight:600;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.hero button:hover{
-  transform:scale(1.05);
-}
-
-/* SECTION */
-.section{
-  padding:80px 50px;
-}
-
-.section h2{
-  text-align:center;
-  margin-bottom:50px;
-  font-size:32px;
-}
-
-/* PRODUCTS */
-.products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-}
-
-.card{
-  background:#141414;
-  border-radius:12px;
-  overflow:hidden;
-  transition:.4s;
-  position:relative;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-}
-
-.card img{
-  width:100%;
-  height:300px;
-  object-fit:cover;
-  transition:.4s;
-}
-
-.card:hover img{
-  transform:scale(1.08);
-}
-
-.tag{
-  position:absolute;
-  top:15px;
-  left:15px;
-  background:#c9a24d;
-  color:#000;
-  padding:4px 10px;
-  font-size:12px;
-  font-weight:600;
-}
-
-.card-content{
-  padding:18px;
-}
-
-.card-content h3{
-  font-size:16px;
-  margin-bottom:8px;
-}
-
-.price{
-  font-size:18px;
-  font-weight:700;
-}
-
-.buy{
-  display:block;
-  margin-top:15px;
-  text-align:center;
-  padding:10px;
-  background:#fff;
-  color:#000;
-  font-weight:600;
-  transition:.3s;
-}
-
-.buy:hover{
-  background:#c9a24d;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:30px;
-  color:#777;
-  font-size:14px;
-}
-
-/* ANIMATION */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-/* MOBILE */
-@media(max-width:600px){
-  header{padding:15px 20px}
-  .hero h1{font-size:36px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuyFromWonk - Affordable Stylish Products</title>
+  <style>
+    /* General reset & body */
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family: 'Helvetica Neue', sans-serif; background-color:#111; color:white; line-height:1.6;}
+    a {text-decoration:none; color:white;}
+    img {max-width:100%; display:block;}
+    /* Navigation */
+    nav {display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; background:#111; position:sticky; top:0; z-index:1000;}
+    nav a:hover {border-bottom:2px solid #FFD700;}
+    .logo {font-weight:bold; font-size:1.5rem; letter-spacing:1px;}
+    .nav-links {display:flex; gap:2rem;}
+    /* Hero */
+    .hero {display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:5rem 2rem;}
+    .hero h1 {font-size:3rem; margin-bottom:1rem; animation:fadeIn 2s ease;}
+    .hero p {font-size:1.2rem; color:#ccc; margin-bottom:2rem; animation:fadeIn 2.5s ease;}
+    .hero button {padding:1rem 2rem; font-size:1rem; border:none; background:#FFD700; color:#111; cursor:pointer; transition:0.3s;}
+    .hero button:hover {transform:scale(1.05);}
+    @keyframes fadeIn {from {opacity:0;} to{opacity:1;}}
+    /* Products grid */
+    .products {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; padding:2rem;}
+    .card {background:#1c1c1c; border-radius:1rem; overflow:hidden; position:relative; transition:0.3s; cursor:pointer;}
+    .card:hover {transform:translateY(-5px);}
+    .card img {transition:0.3s; }
+    .card:hover img {transform:scale(1.05);}
+    .card-content {padding:1rem;}
+    .card h3 {margin-bottom:0.5rem; font-size:1.2rem;}
+    .price {font-weight:bold; color:#FFD700; margin-bottom:1rem;}
+    .tag {position:absolute; top:1rem; left:1rem; background:#FFD700; color:#111; padding:0.3rem 0.6rem; font-size:0.8rem; font-weight:bold; border-radius:0.3rem;}
+    .buy {display:inline-block; padding:0.5rem 1rem; background:#FFD700; color:#111; font-weight:bold; border-radius:0.5rem; transition:0.3s;}
+    .buy:hover {background:#e6c200;}
+    /* Footer */
+    footer {text-align:center; padding:2rem; color:#ccc; font-size:0.9rem;}
+  </style>
 </head>
-
 <body>
 
-<header>
-  <div class="logo">WONK</div>
+  <!-- Navigation -->
   <nav>
-    <a href="#">Home</a>
-    <a href="#shop">Shop</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
+    <div class="logo">BuyFromWonk</div>
+    <div class="nav-links">
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
-</header>
 
-<section class="hero">
-  <div>
-    <h1>Affordable Luxury.<br>Everyday Style.</h1>
-    <p>Fashion • Accessories • Tech • Lifestyle</p>
-    <button>Shop Now</button>
-  </div>
-</section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Affordable Style, Premium Feel</h1>
+    <p>Fashion outfits, accessories, tech gadgets & lifestyle products for everyone</p>
+    <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+  </section>
 
-<section class="section" id="shop">
-  <h2>Trending Products</h2>
+  <!-- Products Section -->
+  <section id="products" class="products">
 
-  <div class="products">
-
+    <!-- Product 1 -->
     <div class="card">
       <span class="tag">Trending</span>
-      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f">
+      <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" alt="Wireless Earbuds">
       <div class="card-content">
-        <h3>Premium Smart Watch</h3>
-        <div class="price">₹1,999</div>
-        <a class="buy" href="#">Buy Now</a>
+        <h3>Wireless Earbuds</h3>
+        <div class="price">₹1,399</div>
+        <a class="buy" href="https://wa.me/?text=Hi%2C%20I%20want%20to%20buy%20Wireless%20Earbuds" target="_blank">Buy Now</a>
       </div>
     </div>
 
+    <!-- Product 2 -->
     <div class="card">
       <span class="tag">Best Seller</span>
-      <img src="https://images.unsplash.com/photo-1585386959984-a4155228c9d4">
+      <img src="https://images.unsplash.com/photo-1585386959984-a4155228c9d4" alt="Minimal Fashion Bag">
       <div class="card-content">
         <h3>Minimal Fashion Bag</h3>
         <div class="price">₹1,499</div>
-        <a class="buy" href="#">Buy Now</a>
+        <a class="buy" href="https://wa.me/?text=Hi%2C%20I%20want%20to%20buy%20Minimal%20Fashion%20Bag" target="_blank">Buy Now</a>
       </div>
     </div>
 
+    <!-- Product 3 -->
     <div class="card">
       <span class="tag">New Drop</span>
-      <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
+      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Premium Smart Watch">
       <div class="card-content">
-        <h3>Wireless Earbuds</h3>
-        <div class="price">₹1,299</div>
-        <a class="buy" href="#">Buy Now</a>
+        <h3>Premium Smart Watch</h3>
+        <div class="price">₹1,499</div>
+        <a class="buy" href="https://wa.me/?text=Hi%2C%20I%20want%20to%20buy%20Premium%20Smart%20Watch" target="_blank">Buy Now</a>
       </div>
     </div>
 
-  </div>
-</section>
+    <!-- Product 4 -->
+    <div class="card">
+      <span class="tag">Trending</span>
+      <img src="https://images.unsplash.com/photo-1590502593743-c3ad0b2b3f46" alt="Phone Holder Stand">
+      <div class="card-content">
+        <h3>Phone Holder Stand</h3>
+        <div class="price">₹1,299</div>
+        <a class="buy" href="https://wa.me/?text=Hi%2C%20I%20want%20to%20buy%20Phone%20Holder%20Stand" target="_blank">Buy Now</a>
+      </div>
+    </div>
 
-<footer>
-  © 2026 Buy From WONK • Affordable Premium Store
-</footer>
+    <!-- Product 5 -->
+    <div class="card">
+      <span class="tag">Best Seller</span>
+      <img src="https://images.unsplash.com/photo-1517202383675-eb0a6e27775f" alt="Sunglasses">
+      <div class="card-content">
+        <h3>Sunglasses</h3>
+        <div class="price">₹1,399</div>
+        <a class="buy" href="https://wa.me/?text=Hi%2C%20I%20want%20to%20buy%20Sunglasses" target="_blank">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="card">
+      <span class="tag">New Drop</span>
+      <img src="https://images.unsplash.com/photo-1532634896-26909d0d70e6" alt="Slim Wallet">
+      <div class="card-content">
+        <h3>Slim Wallet</h3>
+        <div class="price">₹1,299</div>
+        <a class="buy" href="https://wa.me/?text=Hi%2C%20I%20want%20to%20buy%20Slim%20Wallet" target="_blank">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="card">
+      <span class="tag">Trending</span>
+      <img src="https://images.unsplash.com/photo-1602810318278-bf2d8c0f3c0c" alt="Trimmer / Grooming Kit">
+      <div class="card-content">
+        <h3>Trimmer / Grooming Kit</h3>
+        <div class="price">₹1,499</div>
+        <a class="buy" href="https://wa.me/?text=Hi%2C%20I%20want%20to%20buy%20Trimmer%20Grooming%20Kit" target="_blank">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="card">
+      <span class="tag">Best Seller</span>
+      <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68" alt="Bluetooth Speaker">
+      <div class="card-content">
+        <h3>Bluetooth Speaker</h3>
+        <div class="price">₹1,399</div>
+        <a class="buy" href="https://wa.me/?text=Hi%2C%20I%20want%20to%20buy%20Bluetooth%20Speaker" target="_blank">Buy Now</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 BuyFromWonk. All rights reserved.
+  </footer>
 
 </body>
 </html>
+
